@@ -1,0 +1,33 @@
+[
+    {
+        "origin": [
+            "https://tjandpals.com", 
+            "http://localhost:4000", 
+            "http://localhost:4001",
+            "http://localhost:3000",
+            "http://localhost:3001",
+            "http://localhost:9001",
+        ],
+        "responseHeader": [
+            "Origin", 
+            "Accept", 
+            "X-Upload-Content-Type", 
+            "X-Requested-With", 
+            "Authorization", 
+            "Content-Type", 
+            "Content-Length", 
+            "Accept-Encoding", 
+            "X-CSRF-Token",
+            "Access-Control-Allow-Credentials"
+        ],
+        "method": [
+            "GET", 
+            "HEAD", 
+            "PUT", 
+            "DELETE", 
+            "POST", 
+            "OPTIONS"
+        ],
+        "maxAgeSeconds": 1 
+    }
+]
