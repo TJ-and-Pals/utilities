@@ -5,12 +5,12 @@ const path = require('path');
 
 const cmd = process.argv[2];
 
-const CloudStorageOrigin = `gs://tjandpals-cdn-eu/app/`;
+const CloudStorageOrigin = `gs://tjandpals-cdn-eu/`;
 
 let localPath = (() => {
     switch(os.platform()) {
-        case "linux": return `/dropbox/container/Dropbox (Personal)/TJANDPALS/SA Test Pilot/Apps/Common/cdn/app`
-        default: return `D:\\Dropbox (Personal)\\TJANDPALS\\SA Test Pilot\\Apps\\Common\\cdn\\app`
+        case "linux": return `/dropbox/container/Dropbox (Personal)/TJANDPALS/tj-cdn`
+        default: return `D:\\Dropbox (Personal)\\TJANDPALS\\tj-cdn`
     }
 })();
 
