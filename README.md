@@ -1,7 +1,7 @@
 # Setup
 
 ## .env
-The following needs to be set in a `.env` file:
+The following needs to be set in a `.env` file. This is a file you must create in the same folder as this README.md as it it is intentionally .gitignored (allowing different people to have different configurations)
 
 ```
 CLOUD_STORAGE_ADDR=gs://tjandpals-cdn-eu/
