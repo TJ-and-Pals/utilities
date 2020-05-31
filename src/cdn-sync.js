@@ -1,3 +1,4 @@
+require('dotenv').config();
 const spawn = require('cross-spawn');
 const fs = require('fs');
 const os = require('os');
@@ -5,16 +6,8 @@ const path = require('path');
 
 const cmd = process.argv[2];
 
-const CloudStorageOrigin = `gs://tjandpals-cdn-eu/`;
-
-let localPath = (() => {
-    switch(os.platform()) {
-        case "linux": return `/dropbox/container/Dropbox (Personal)/TJANDPALS/tj-cdn`
-        default: return `D:\\Dropbox (Personal)\\TJANDPALS\\tj-cdn`
-    }
-})();
-
-localPath = path.resolve(localPath);
+const localPath = path.resolve(process.env.MEDIA_PATH);
+const CloudStorageOrigin = process.env.CLOUD_STORAGE_ADDR;
 
 console.log(`Syncing ${cmd}`);
 console.log(`From ${localPath}`);
@@ -28,11 +21,3 @@ if(cmd === "--hard") {
     console.log("must choose hard or soft sync mode!");
 }
 
-
-  /*
-if(process.env.NODE_ENV == "sync-soft") {
-    child_process.execFileSync("gsutil", ["-m", "rsync", "-r", CommonConfig.GetLocalFolders().cdn, CommonConfig.GetCloudStorageCdnOrigin()]);
-} else if(process.env.NODE_ENV == "sync-hard") {
-    child_process.execFileSync("gsutil", ["-m", "rsync", "-d", "-r", CommonConfig.GetLocalFolders().cdn, CommonConfig.GetCloudStorageCdnOrigin()]);
-}
-*/

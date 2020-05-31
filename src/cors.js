@@ -1,16 +1,8 @@
+require('dotenv').config();
 const { execSync } = require('child_process');
 const path = require('path');
 const sh = require('shelljs');
 const cwd = sh.pwd().toString();
-
-
-const getBucket = () => {
-    switch(process.argv[2]) {
-        case "--app": return "tjandpals-cdn-eu";
-    }
-
-    return null;
-}
 
 const getConfig = bucket => {
     switch(process.argv[2]) {
@@ -29,6 +21,7 @@ const getAction = () => {
     return null;
 }
 
+const bucket = process.env.CLOUD_STORAGE_BUCKET;
 const bucket = getBucket();
 const configFile = getConfig();
 const action = getAction();
