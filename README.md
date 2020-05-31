@@ -25,3 +25,5 @@ See [package.json](./package.json) for a full list.
 The most common command will be `npm run cdn-sync:hard` to sync the local dropbox folder to the remote cloud storage.
 
 "hard" means it will also delete files that are no longer referenced, whereas "soft" means it will only add new files without deleting those that are stale.
+
+Note that due to a bug with the google sdk utilities, on windows you should run the commands in command prompt - not powershell
